@@ -1,0 +1,72 @@
+#include "StdAfx.h"
+#include "Vector.h"
+#include <iostream>
+#define MAX 10
+
+using namespace std;
+
+Vector::Vector(void)
+{
+	vec[MAX]=0;
+	tamano=0;
+}
+
+
+Vector::~Vector(void)
+{
+}
+
+int Vector::Get_tamano()
+{return tamano;}
+	
+void Vector::Set_tamano(int tam)
+{tamano=tam;}
+
+int Vector::Get_vector(int posicion)
+{
+	return vec[posicion];
+}
+
+void Vector::Set_vector(int posicion, int _elemento)
+{
+	vec[posicion]=_elemento;
+}
+     
+void Vector::Incrementar()
+{tamano++;}
+
+void Vector::Decrementar()
+{tamano--;}
+
+bool Vector::Vacio_vector()
+{
+	if (tamano==0) 
+		{return true;}
+	else 
+	{return false;}	
+}
+	
+bool Vector::Lleno_vector()
+{
+	if (tamano==(MAX-1)) 
+	    {return true;}
+
+	else {return false;}
+}
+
+void Vector::Fibonacci()
+{int f1,f2,f3;
+ f1=0;
+ f2=1;
+ f3=1;
+ vec[0]=f1;vec[1]=f2;
+ for (int i=2;i<=tamano;i++)
+ {f3=f1+f2;
+ vec[i]=f3;
+ f1=f2;
+ f2=f3;
+ }
+}
+ 
+
+
